@@ -1,0 +1,13 @@
+{{/* Declare a new string variable, $linkToCover */}}
+{{ $linkToCover := "" }}
+
+{{/* Use the value from front matter if present */}}
+{{ if .Params.site_logo }}
+    {{ $linkToCover = .Params.site_logo }}
+
+{{/* Use the value from the site config */}}
+{{ else }}
+    {{ $linkToCover = .Site.Params.site_logo }}
+{{ end }}
+
+{{ return $linkToCover }}
