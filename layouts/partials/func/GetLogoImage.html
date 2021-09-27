@@ -7,7 +7,11 @@
 
 {{/* Use the value from the site config */}}
 {{ else }}
-    {{ $linkToCover = .Site.Params.site_logo }}
+    {{ if eq .Page.Kind "taxonomy" }}
+        {{ $linkToCover = .Site.Params.taxonomy_logo }}
+    {{ else }}
+        {{ $linkToCover = .Site.Params.site_logo }}
+    {{ end }}
 {{ end }}
 
 {{ return $linkToCover }}
