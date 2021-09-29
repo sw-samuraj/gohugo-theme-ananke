@@ -7,7 +7,7 @@
 
 {{/* Use the value from the site config */}}
 {{ else }}
-    {{ if eq .Page.Kind "taxonomy" }}
+    {{ if in "taxonomy term" .Page.Kind }}
         {{ $linkToCover = .Site.Params.taxonomy_logo }}
     {{ else }}
         {{ $linkToCover = .Site.Params.site_logo }}
